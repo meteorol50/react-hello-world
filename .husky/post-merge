@@ -5,12 +5,12 @@
 if git diff 'HEAD@{1}' --name-only | grep package.json > /dev/null; then
   yarn || :
 else
-  printf "\033[32m%b\033[m package.json has not changed.\n" "\u2714"
+  printf "\033[32m%s\033[m package.json has not changed.\n" "\u2714"
 fi
 
 # VS Code 推奨プラグイン変更チェック
 if git diff 'HEAD@{1}' --name-only | grep .vscode/extensions.json > /dev/null; then
   printf "\033[33m[WARN]\033[m VS Code Extensions has changed. \033[32;1m/.vscode/extensions.json\033[m.\n"
 else
-  printf "\033[32m%b\033[m VS Code Extensions has not changed.\n" "\u2714"
+  printf "\033[32m%s\033[m VS Code Extensions has not changed.\n" "\u2714"
 fi
