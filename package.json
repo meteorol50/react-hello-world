@@ -106,14 +106,14 @@
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": [
-      "prettier --write --loglevel=warn",
-      "eslint --fix"
+      "prettier --write --loglevel=error",
+      "eslint --fix --quiet"
     ],
     "src/**/*.{css,less,sass,scss}": [
-      "stylelint --fix"
+      "stylelint --fix --quiet"
     ],
-    "src/**/*.{gql,graphql,json}": [
-      "prettier --write --loglevel=warn"
+    "{public,src}/**/*.{html,gql,graphql,json}": [
+      "prettier --write --loglevel=error"
     ]
   }
 }
