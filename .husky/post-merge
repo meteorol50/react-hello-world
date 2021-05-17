@@ -2,7 +2,7 @@
 . "$(dirname "$0")/_/husky.sh"
 
 # パッケージ変更チェック
-printf "\033[93mchecking\033[m packages...\n"
+printf "\n\033[93mchecking\033[m packages...\n"
 
 if git diff 'HEAD@{1}' --name-only | grep package.json > /dev/null; then
   printf "\033[97m$ yarn\033[m\n"
@@ -12,7 +12,7 @@ else
 fi
 
 # VS Code 推奨プラグイン変更チェック
-printf "\033[93mchecking\033[m extensions...\n"
+printf "\n\033[93mchecking\033[m extensions...\n"
 
 if git diff 'HEAD@{1}' --name-only | grep .vscode/extensions.json > /dev/null; then
   printf "\033[33m[WARN]\033[m VS Code Extensions has changed. \033[32;1m/.vscode/extensions.json\033[m.\n"
