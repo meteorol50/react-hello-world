@@ -1,4 +1,21 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-(git diff 'HEAD@{1}' --name-only | grep package.json > /dev/null) && yarn || :
+# パッケージ変更チェック
+NO_PACKAGE_CHANGED="\033[32m\u2714\033[m\n package.json has not changed.\n"
+
+if [git diff 'HEAD@{1}' --name-only | grep package.json > /dev/null]; then
+  yarn || :
+else
+  printf ${NO_PACKAGE_CHANGED}
+fi
+
+# VS Code 推奨プラグイン変更チェック
+CHECK_EXTENSIONS="\033[33m[WARN]\033[m VS Code Extensions has changed. \033[32;1m/.vscode/extensions.json\033[m.\n"
+NO_EXTENSION_CHANGED="\033[32m\u2714\033[m\n VS Code Extensions has not changed.\n"
+
+if [git diff 'HEAD@{1}' --name-only | grep .vscode/extensions.json > /dev/null]; then
+  printf ${CHECK_EXTENSIONS}
+else
+  printf ${NO_EXTENSION_CHANGED}
+fi
