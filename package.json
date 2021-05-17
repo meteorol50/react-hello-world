@@ -42,8 +42,7 @@
     "build-storybook": "build-storybook -s public",
     "console": "console.log('a')",
     "postinstall": "typesync",
-    "prepare": "husky install",
-    "postmerge": "(git diff 'HEAD@{1}' --name-only | grep package.json > /dev/null) && console.log('diff exists !!') || :"
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
