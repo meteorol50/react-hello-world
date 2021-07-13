@@ -184,8 +184,32 @@ overrides: [
 $ yarn storybook
 ```
 
-## Storyshots設定
+## renovateの導入
 
-## Cypressのインストール
+renovete.json 作成
 
-## renovateの設定
+## nodeのバージョン更新
+
+バージョンが古くてupdateできないものが出てきたのでnode更新
+
+$ nodenv local 14.17.3
+$ yarn
+
+## 追加パッケージインストール
+
+Book-Square/proto-app で使っているものを追加でインストール
+
+$ yarn add @emotion/babel-preset-css-prop
+$ yarn add react-hook-form
+$ yarn add react-router-bootstrap
+$ yarn add -D eslint-plugin-react @typescript-eslint/eslint-plugin eslint-config-airbnb eslint eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react-hooks @typescript-eslint/parser
+$ yarn add -D stylelint-config-prettier
+
+## .gitignore更新
+
+## 設定ファイル群作成、更新
+
+.babelrc
+.eslintrc.js
+.prettierrc.js
+.stylelintrc.js
