@@ -50,6 +50,13 @@ module.exports = {
         exceptAfterSingleLine: true,
       },
     ],
+    'no-param-reassign': [
+      'error',
+      {
+        props: true,
+        ignorePropertyModificationsFor: ['state'],
+      },
+    ],
     'no-void': [
       'error',
       {
@@ -97,6 +104,7 @@ module.exports = {
         extensions: ['.jsx', '.tsx'],
       },
     ],
+    'react/jsx-fragments': 'off',
     'react/jsx-props-no-spreading': [
       'error',
       {
@@ -106,13 +114,21 @@ module.exports = {
       },
     ],
     'react/react-in-jsx-scope': 'off',
-    '@emotion/jsx-import': 'error',
+
+    // Emotion
+    '@emotion/jsx-import': 'off',
   },
   overrides: [
     {
       files: ['*.tsx'],
       rules: {
         'react/prop-types': 'off',
+      },
+    },
+    {
+      files: ['style.ts'],
+      rules: {
+        'import/prefer-default-export': 'off',
       },
     },
     {
