@@ -2029,7 +2029,7 @@
     source-map "^0.5.7"
     stylis "^4.0.3"
 
-"@emotion/babel-preset-css-prop@^11.2.0":
+"@emotion/babel-preset-css-prop@11.2.0":
   version "11.2.0"
   resolved "https://registry.yarnpkg.com/@emotion/babel-preset-css-prop/-/babel-preset-css-prop-11.2.0.tgz#c7e945f56b2610b438f0dc8ae5253fc55488de0e"
   integrity sha512-9XLQm2eLPYTho+Cx1LQTDA1rATjoAaB4O+ds55XDvoAa+Z16Hhg8y5Vihj3C8E6+ilDM8SV5A9Z6z+yj0YIRBg==
