@@ -1,27 +1,32 @@
-// FC: Functional Component
-import { FC } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Home from 'components/pages/Home';
+import NextPage from 'components/pages/NextPage';
+import { VFC, useEffect } from 'react';
+import { Redirect, Route, Switch, useHistory, useLocation } from 'react-router';
 
-const App: FC = () => (
-  <div className="App">
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>
-        Edit
-        <code>src/App.tsx</code>
-        and save to reload !
-      </p>
-      <a
-        className="App-link"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Learn React
-      </a>
-    </header>
-  </div>
-);
+const App: VFC = () => {
+  const { hash, pathname } = useLocation();
+  const { action } = useHistory();
+
+  // ページ遷移時にページ上部に移動させる
+  useEffect(() => {
+    if (!hash || action !== 'POP') {
+      window.scrollTo(0, 0);
+    }
+  }, [action, hash, pathname]);
+
+  return (
+    <div className="App">
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/next">
+          <NextPage />
+        </Route>
+        <Redirect to="/" />
+      </Switch>
+    </div>
+  );
+};
 
 export default App;
