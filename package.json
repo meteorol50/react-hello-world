@@ -112,7 +112,7 @@
     "typesync": "0.8.0"
   },
   "resolutions": {
-    "babel-loader": "8.1.0"
+    "babel-loader": "8.2.2"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": [
