@@ -1,4 +1,4 @@
-import Home from 'components/pages/Home';
+import EnhancedHome from 'components/pages/Home/container';
 import NextPage from 'components/pages/NextPage';
 import { VFC, useEffect } from 'react';
 import { Redirect, Route, Switch, useHistory, useLocation } from 'react-router';
@@ -18,7 +18,7 @@ const App: VFC = () => {
     <div className="App">
       <Switch>
         <Route exact path="/">
-          <Home />
+          <EnhancedHome />
         </Route>
         <Route path="/next">
           <NextPage />
