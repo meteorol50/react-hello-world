@@ -111,9 +111,6 @@
     "stylelint-order": "4.1.0",
     "typesync": "0.8.0"
   },
-  "resolutions": {
-    "babel-loader": "8.1.0"
-  },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": [
       "prettier --write --loglevel=error",
