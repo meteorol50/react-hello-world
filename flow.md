@@ -213,3 +213,21 @@ $ yarn add -D stylelint-config-prettier
 .eslintrc.js
 .prettierrc.js
 .stylelintrc.js
+
+## babel-loader のバージョンでエラったので.env作成
+
+プロジェクト直下に.envファイル作成
+
+`SKIP_PREFLIGHT_CHECK=true`
+
+## store構成修正
+
+## HomeとNextの2ページ作成
+
+## Test用に'history'パッケージインストール
+
+```js
+yarn add history
+```
+
+## Test作成
