@@ -29,14 +29,7 @@ module.exports = {
     tsconfigRootDir: __dirname,
   },
   // 読み込ませる追加ルールのプラグイン、ここも記載によって有効化が必要
-  plugins: [
-    '@typescript-eslint',
-    'import',
-    'jsx-a11y',
-    'react',
-    'react-hooks',
-    '@emotion',
-  ],
+  plugins: ['@typescript-eslint', 'import', 'jsx-a11y', 'react', 'react-hooks', '@emotion'],
   // ESLintが親ディレクトリの設定ファイルまで読み込んでしまうのを阻止
   root: true,
   rules: {
@@ -96,6 +89,21 @@ module.exports = {
         jsx: 'never',
         ts: 'never',
         tsx: 'never',
+      },
+    ],
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: [
+          '.storybook/**',
+          'stories/**',
+          '**/*/*.story.*',
+          '**/*/*.stories.*',
+          '**/__specs__/**',
+          '**/*/*.spec.*',
+          '**/__tests__/**',
+          '**/*/*.test.*',
+        ],
       },
     ],
     'react/jsx-filename-extension': [
