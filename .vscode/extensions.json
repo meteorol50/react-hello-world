@@ -9,6 +9,7 @@
     "esbenp.prettier-vscode",
     "stylelint.vscode-stylelint",
     "gruntfuggly.todo-tree",
-    "visualstudioexptteam.vscodeintellicode"
+    "visualstudioexptteam.vscodeintellicode",
+    "orta.vscode-jest"
   ]
 }
