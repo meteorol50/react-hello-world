@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { Router } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
 import EnhancedHome from './container';
@@ -15,6 +15,15 @@ describe('Home', () => {
     );
     const isShowDiv = await findByTestId('isShow');
     expect(isShowDiv.innerHTML).toEqual('false');
+  });
+  it('has no text', async () => {
+    const history = createMemoryHistory();
+    render(
+      <Router {...{ history }}>
+        <EnhancedHome />
+      </Router>,
+    );
+    expect((await screen.findByTestId('isShow')).innerHTML).toEqual('false');
   });
 
   it('has a text', async () => {
